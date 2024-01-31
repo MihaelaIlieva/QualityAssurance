@@ -1,0 +1,2065 @@
+{
+  "id": "497a642d-5ae0-43f8-83e6-ecdda463c94a",
+  "version": "2.0",
+  "name": "InaEssentials",
+  "url": "https://inaessentials.com/collections/frontpage",
+  "tests": [{
+    "id": "c955f72a-812f-479f-b2d3-c82f7a8b3d38",
+    "name": "DislikeComment",
+    "commands": [{
+      "id": "7cc051a5-ad02-49ec-9fd1-bfe3188eed42",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/promo-set-kosopad",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4276af7c-df0c-40ac-8bac-bc77a3cbc862",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1b88626a-ca38-417e-9dba-d1550c0750ae",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.jdgm-rev:nth-child(2) .jdgm-rev_thump-down-count",
+      "targets": [
+        ["css=.jdgm-rev:nth-child(2) .jdgm-rev_thump-down-count", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div/div[2]/div[3]/div[2]/div/span[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div[2]/div/span[4]", "xpath:position"]
+      ],
+      "value": "initial_dislikes_count"
+    }, {
+      "id": "e527b13d-96a7-4acb-95e0-537c190dd669",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-rev:nth-child(2) .jdgm-rev_thumb-down",
+      "targets": [
+        ["css=.jdgm-rev:nth-child(3) .jdgm-rev_thumb-down", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div/div[3]/div[3]/div[2]/div/span[3]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[3]/div[2]/div/span[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b6eddff-15bf-4d87-9dce-22e39ad1ef09",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.jdgm-rev:nth-child(2) .jdgm-rev_thump-down-count",
+      "targets": [
+        ["css=.jdgm-rev:nth-child(3) .jdgm-rev_thump-down-count", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div/div[3]/div[3]/div[2]/div/span[4]", "xpath:idRelative"],
+        ["xpath=//div[3]/div[3]/div[2]/div/span[4]", "xpath:position"]
+      ],
+      "value": "new_dislikes_count"
+    }, {
+      "id": "14f8bf7f-9417-47bc-bd16-75f187afb9b6",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseInt(${initial_dislikes_count})+1;",
+      "targets": [],
+      "value": "possible_incremented_dislikes"
+    }, {
+      "id": "d978e2ae-b4c8-41c6-a1e0-4c407135f36a",
+      "comment": "",
+      "command": "executeScript",
+      "target": "parseInt(${new_dislikes_count});",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8dc657b2-cf66-4265-9ee9-498fc9fb8b50",
+      "comment": "",
+      "command": "if",
+      "target": "${new_dislikes_count} == ${possible_incremented_dislikes}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b49dd765-6c7e-4120-af31-1fcf88ebef58",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 'correct'",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "860ac594-4629-4c80-9370-eef86fbe2ebd",
+      "comment": "",
+      "command": "echo",
+      "target": "Comment Disliked",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b9e9067-f7d5-46d6-9198-756eda215ea3",
+      "comment": "",
+      "command": "elseIf",
+      "target": "${new_dislikes_count} == ${initial_dislikes_count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "29f9ff5a-c841-45b2-9bb4-b46bcb1012f0",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 'correct'",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "a8cb2b51-bae8-4a8d-a201-c255ef76d693",
+      "comment": "",
+      "command": "echo",
+      "target": "Comment Already Assessed",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d5bc18c-ae53-415b-829d-cb109e677f80",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a574b1b-c93b-4138-a5bb-5c4c82f2afff",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 'incorrect'",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "b1e1224f-26bc-4307-badc-bbd12e3db777",
+      "comment": "",
+      "command": "echo",
+      "target": "Error in Disliking Comment",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27bbc828-7daa-46a6-a1bc-a51aa778cb07",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6287574e-8b88-48f7-83ad-b5397bab6962",
+      "comment": "",
+      "command": "assert",
+      "target": "output",
+      "targets": [],
+      "value": "correct"
+    }]
+  }, {
+    "id": "43efcb36-9670-4a4d-8aa6-7c33251a58ac",
+    "name": "LikeComment",
+    "commands": [{
+      "id": "fa70b9b2-bc6c-4061-9aec-68e0a78117ca",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "849c630c-5b7c-40a5-a0b3-97bbbe756b4b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "83bc62a5-2d8e-4136-a44c-2f268930d203",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.jdgm-rev:nth-child(5) .jdgm-rev_thump-up-count",
+      "targets": [],
+      "value": "initial_likes_count"
+    }, {
+      "id": "88fd0181-388f-49dd-8222-20895625b0fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-rev:nth-child(5) .jdgm-rev_thumb-up",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "32cf2376-cf35-4ad9-b67a-bed6a7a47105",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.jdgm-rev:nth-child(5) .jdgm-rev_thump-up-count",
+      "targets": [],
+      "value": "new_likes_count"
+    }, {
+      "id": "a0bd18c2-b599-41bc-b125-943a4868e8fe",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseInt(${initial_likes_count})+1;",
+      "targets": [],
+      "value": "possible_incremented_likes"
+    }, {
+      "id": "0edfbed0-8e8c-49e1-8bc8-c68ce120b220",
+      "comment": "",
+      "command": "executeScript",
+      "target": "parseInt(${new_likes_count});",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "396939e9-4e8f-42b9-9903-34a8176049ec",
+      "comment": "",
+      "command": "if",
+      "target": "${new_likes_count} == ${possible_incremented_likes}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ff2cc0e4-d47b-4105-8134-e1a4b54326c1",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 'correct'",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "7df76854-2b33-490b-95cc-78c06c119b25",
+      "comment": "",
+      "command": "echo",
+      "target": "Comment Liked",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9220636-c2c7-4fbb-b334-599e974315fd",
+      "comment": "",
+      "command": "elseIf",
+      "target": "${new_likes_count} == ${initial_likes_count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "240c21b1-da38-4cc1-a9d5-e82a3b2686b1",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 'correct'",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "c5ffb102-a618-40b8-b373-54959998dea5",
+      "comment": "",
+      "command": "echo",
+      "target": "Comment Already Assessed",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f21116b1-e735-4828-9b3c-a6d28806c7fe",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "004ccb9a-4bc4-4f2b-a21a-f478dfe991ae",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 'incorrect'",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "705c641c-c992-4716-a00a-8c2470dc91f1",
+      "comment": "",
+      "command": "echo",
+      "target": "Error in Liking Comment",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ffa0471-c685-4f8e-b001-b75e83d8fa7c",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a0ef5fb-ac78-4100-9806-a3e1c004426b",
+      "comment": "",
+      "command": "assert",
+      "target": "output",
+      "targets": [],
+      "value": "correct"
+    }]
+  }, {
+    "id": "bac19105-b7d4-403a-abe0-154c90fd2c00",
+    "name": "Pagination",
+    "commands": [{
+      "id": "0511faf4-5010-413d-9e0a-f2dbfa60ca16",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42ad391a-5d16-411e-b830-0f82e61c1449",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5e51ee5-f134-4c69-9432-0408d10fba55",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-paginate",
+      "targets": [
+        ["css=.jdgm-paginate", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div[2]/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "115222f8-0ca0-4329-b52c-5d5d3ce5ec91",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-paginate__next-page",
+      "targets": [
+        ["css=.jdgm-paginate__next-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/a[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e671c8d-432f-4d12-84d7-a0e4e5d7b382",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-paginate",
+      "targets": [
+        ["css=.jdgm-paginate", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div[2]/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a13481d8-e4f0-47fc-9e03-05e9371e19ae",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-paginate__prev-page",
+      "targets": [
+        ["css=.jdgm-paginate__prev-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b4ba345-86d2-456f-bfad-eef2e81df447",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-paginate",
+      "targets": [
+        ["css=.jdgm-paginate", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div[2]/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b551416-9d30-41f1-9466-455c525e135a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=3",
+      "targets": [
+        ["linkText=13", "linkText"],
+        ["css=.jdgm-paginate__page:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'13')]", "xpath:link"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'13')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ccdc343c-e063-4377-b948-b5224527f466",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-paginate",
+      "targets": [
+        ["css=.jdgm-paginate", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div[2]/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3879c7b-bc63-4df8-918d-f15bf19a5d72",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-paginate__last-page",
+      "targets": [
+        ["css=.jdgm-paginate__last-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[8]", "xpath:idRelative"],
+        ["xpath=//a[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c56bd851-0c63-455d-88f9-c0e9b4884b71",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-paginate",
+      "targets": [
+        ["css=.jdgm-paginate", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div[2]/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcb5d6d7-c25e-4b40-bb79-283a4a7334bd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-paginate__first-page",
+      "targets": [
+        ["css=.jdgm-paginate__first-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be6e9040-9643-415e-ab52-c78035d43481",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-paginate",
+      "targets": [
+        ["css=.jdgm-paginate", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div[2]/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d22f646d-3bb7-4d01-9b2a-0559a72ecf15",
+    "name": "SortDateDescending",
+    "commands": [{
+      "id": "e6021e75-678b-426d-8bf6-6f09631a0024",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59997a6d-7492-4a80-bfc3-9ec8be1f6885",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "425c9ab1-935e-4419-af80-bc5906684af4",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2426.666748046875)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e3319e18-0f42-444e-91d5-a848f5b95e7c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [
+        ["css=.jdgm-sort-dropdown", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[4]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33ed753a-c420-4ac7-bd95-c8a3f5a02995",
+      "comment": "",
+      "command": "select",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [],
+      "value": "label=Най-скорошен"
+    }, {
+      "id": "20a1c43e-e86e-4b08-9fde-bff78f520164",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev:nth-child(1) .jdgm-rev__timestamp@data-content",
+      "targets": [],
+      "value": "first_comment_date"
+    }, {
+      "id": "7ab2b27c-efa4-4796-8624-59dbfc235931",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev:nth-child(2) .jdgm-rev__timestamp@data-content",
+      "targets": [],
+      "value": "second_comment_date"
+    }, {
+      "id": "809efcb1-0a51-4a1b-b324-78fc079ef734",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${first_comment_date}>=${second_comment_date}",
+      "targets": [],
+      "value": "datesAreDecreasing"
+    }, {
+      "id": "7223808c-ff25-4e78-bba8-a24b4f5016f0",
+      "comment": "",
+      "command": "assert",
+      "target": "datesAreDecreasing",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "3b3c5cb6-7486-4f34-a1d6-0e1a1eb184fa",
+    "name": "SortRateDescending",
+    "commands": [{
+      "id": "9c6ac95c-4212-47e7-adaf-a38f72b06df6",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b797d61-2c58-4de6-b5e3-f61a0110e2a2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b262b3ef-07a2-4bba-bebb-bdb28424a6ec",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,598.6666870117188)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7475e9a2-109b-4fb5-9321-1dc26dbf428a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1410)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2968a7b-1f4c-4664-8234-02b5bed2df33",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2900)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bca11769-ed86-4316-989e-fe507a9331ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [
+        ["css=.jdgm-sort-dropdown", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[4]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91afe602-f0db-4c7e-ac35-a662bbb03999",
+      "comment": "",
+      "command": "select",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [],
+      "value": "label=Най-висока оценка"
+    }, {
+      "id": "5f118d37-3a93-4969-915f-f37c5c014f11",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev:nth-child(1) .jdgm-rev__rating@data-score",
+      "targets": [],
+      "value": "first_comment_rate"
+    }, {
+      "id": "c129d99d-eb93-410b-9254-e683991056d2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-paginate__last-page",
+      "targets": [
+        ["css=.jdgm-paginate__last-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[5]", "xpath:idRelative"],
+        ["xpath=//div[2]/a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a8dc3dd-7a2d-4279-ab73-8585072c7db9",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev__rating@data-score",
+      "targets": [],
+      "value": "last_comment_rate"
+    }, {
+      "id": "b636ff4e-7eb9-4a15-9a74-e2194afb34a8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseInt(${first_comment_rate})>parseInt(${last_comment_rate})",
+      "targets": [],
+      "value": "ratesAreDecreasing"
+    }, {
+      "id": "aa4d6f35-a04c-4390-b977-f6e1a76e1664",
+      "comment": "",
+      "command": "assert",
+      "target": "ratesAreDecreasing",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "6a677d66-6c94-46fa-99d8-1e3ed6f3ac8a",
+    "name": "SortRateAscending",
+    "commands": [{
+      "id": "8b5efc3d-7131-4e06-8f6c-be5fe17c470b",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d354d17b-a426-4c50-aaaf-8feb2aa118d4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "135b35f6-9ada-443c-bffd-731058ab2d07",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,598.6666870117188)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "462377cc-98ea-4c87-99f3-f2dd3f7b91df",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1410)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc450f36-7f34-47c9-8787-7f274c88fc79",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2900)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "937cdf60-c893-4cc6-aac7-a07ec03cdf9e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [
+        ["css=.jdgm-sort-dropdown", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[4]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "439be741-6c52-4aed-adae-445bfd2e6724",
+      "comment": "",
+      "command": "select",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [],
+      "value": "label=Най-ниска оценка"
+    }, {
+      "id": "4b6bf076-7ee6-42f6-804d-f96096a68fcc",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev:nth-child(1) .jdgm-rev__rating@data-score",
+      "targets": [],
+      "value": "first_comment_rate"
+    }, {
+      "id": "7e71adf7-b64c-4139-a0d1-39c57afa1ad1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-paginate__last-page",
+      "targets": [
+        ["css=.jdgm-paginate__last-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[5]", "xpath:idRelative"],
+        ["xpath=//div[2]/a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2841122a-98d9-485e-a50c-39fcabafd824",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev__rating@data-score",
+      "targets": [],
+      "value": "last_comment_rate"
+    }, {
+      "id": "847034fa-a459-4aff-a25e-4aa12ecaefc7",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseInt(${first_comment_rate})<parseInt(${last_comment_rate})",
+      "targets": [],
+      "value": "ratesAreIncreasing"
+    }, {
+      "id": "8b7b0d04-0dcc-4ac0-9084-3b9ed9eccd07",
+      "comment": "",
+      "command": "assert",
+      "target": "ratesAreIncreasing",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "eaf9c434-17b9-4fc9-849d-c67a26e867c6",
+    "name": "SortPicsOnly",
+    "commands": [{
+      "id": "75bf4d7d-6fd3-4442-8950-b05e88cbc057",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/promo-set-kosopad",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea4537bf-1258-4e59-b0ce-5a04eeecc924",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3337725c-2440-4739-b0fb-baeb0fc100ae",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,3742)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5cc6a05-61f6-4bea-98ef-78d7fa01a6c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f7ad661-064f-48de-b704-9a6923680b69",
+      "comment": "",
+      "command": "select",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [
+        ["css=.jdgm-sort-dropdown", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[4]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=Само снимки"
+    }, {
+      "id": "f2ff5236-4239-47cf-920e-5370fab9d1c9",
+      "comment": "Checks if there is pagination",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.jdgm-paginate__last-page').length",
+      "targets": [],
+      "value": "hasPagination"
+    }, {
+      "id": "3afe38b2-9747-4ffe-9f31-9f960c8a68d0",
+      "comment": "",
+      "command": "if",
+      "target": "${hasPagination} == '1'",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "902c4bd5-fe33-4e6f-836b-66f6637b1a9b",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-paginate__last-page@data-page",
+      "targets": [],
+      "value": "pagesOfReviews"
+    }, {
+      "id": "3023a131-9961-42e5-896e-ed576201a80e",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ac154447-718e-4dd1-b2f5-7e027361de41",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "pagesOfReviews"
+    }, {
+      "id": "dfa11833-8420-4f50-8b4f-94dc3abf572b",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d7b3765-e81d-429a-8df7-dd191f94b887",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "d9edbac2-884a-4706-bce8-e35e48062b74",
+      "comment": "Iterate through every page",
+      "command": "while",
+      "target": "${i}<=Number(${pagesOfReviews})",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "18b77fa9-11c4-4a1c-b306-684d7d8083f8",
+      "comment": "Get all reviews on page count",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('div.jdgm-rev').length",
+      "targets": [],
+      "value": "reviewsCount"
+    }, {
+      "id": "98eed4f4-b019-41f0-aa6a-715694895821",
+      "comment": "Get all reviews with images on page count",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll(\"div.jdgm-rev__pics:has(a)\").length;",
+      "targets": [],
+      "value": "reviewsWithImgCount"
+    }, {
+      "id": "32c62e5f-71b0-4229-9110-6a1e085e3aab",
+      "comment": "store in boolean if they are the same",
+      "command": "executeScript",
+      "target": "return parseInt(${reviewsCount})==parseInt(${reviewsWithImgCount})",
+      "targets": [],
+      "value": "allReviewsAreWithImgs"
+    }, {
+      "id": "96d61766-5758-4784-9b5b-6850c59980d8",
+      "comment": "Check if all reviews are with images",
+      "command": "assert",
+      "target": "allReviewsAreWithImgs",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "a3ea0a5a-94be-44b6-bd94-b10f698f97be",
+      "comment": "check if there is next page",
+      "command": "if",
+      "target": "${pagesOfReviews}!=0 && Number(${i})<=parseInt(${pagesOfReviews})-1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "914e8ee2-9600-46d9-9cea-a15f2cd82dfd",
+      "comment": "Go to next page",
+      "command": "click",
+      "target": "css=.jdgm-paginate__next-page",
+      "targets": [
+        ["css=.jdgm-paginate__next-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/a[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "610faad8-bf92-48ed-842c-71598d5fd7ac",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1a8cdd6-5d0b-4a23-a1fb-ecc106b0e0d2",
+      "comment": "Increment i by 1",
+      "command": "executeScript",
+      "target": "return Number(${i})+1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "1029a4a5-9754-4316-bc81-78fb5c07631f",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1f08cdff-3f76-420c-ad88-02599f64959b",
+    "name": "SortByMostLikedComment",
+    "commands": [{
+      "id": "991b9781-cab3-4a69-b898-561c6bc14662",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "370c38cf-359a-4e3d-bc60-022657136301",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58cb44db-48e0-4a7b-aff2-4c3c92fddbfe",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,598.6666870117188)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "690f856b-675b-4615-8635-0b0154729305",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1410)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "73f43cf6-00c5-4e58-aae9-681b39cd2492",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2900)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf9a2d1a-88a3-4ab7-9454-c5f3f839c56c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [
+        ["css=.jdgm-sort-dropdown", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[4]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06910758-d0a5-4f11-b8ae-71d3ef7a0295",
+      "comment": "",
+      "command": "select",
+      "target": "css=.jdgm-sort-dropdown",
+      "targets": [],
+      "value": "label=Най-полезно"
+    }, {
+      "id": "8a60cb3e-8ebe-430e-99e2-4fb2657c1c79",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev:nth-child(1) .jdgm-rev_thump-up-count@data-thumb-count",
+      "targets": [],
+      "value": "first_comment_likes"
+    }, {
+      "id": "31cef486-2cf3-4584-8689-7deaa7ed6368",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-paginate__last-page",
+      "targets": [
+        ["css=.jdgm-paginate__last-page", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div[2]/div[2]/a[5]", "xpath:idRelative"],
+        ["xpath=//div[2]/a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "987175d6-48f9-44a3-ade5-adec6f2c759b",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.jdgm-rev_thump-up-count@data-thumb-count",
+      "targets": [],
+      "value": "last_comment_likes"
+    }, {
+      "id": "58674fd5-333c-4f73-8b62-742824595bec",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseInt(${first_comment_likes})>=parseInt(${last_comment_likes})",
+      "targets": [],
+      "value": "likesAreDecreasing"
+    }, {
+      "id": "7c24798e-697a-4605-82a1-f313085c7167",
+      "comment": "",
+      "command": "assert",
+      "target": "likesAreDecreasing",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "9dd4f2bb-0e2b-4c83-a904-41036afa54ed",
+    "name": "ShowCommentForm",
+    "commands": [{
+      "id": "04c211e1-ce2b-4ccf-99d6-c2222e2fcdc6",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3845c713-1a6c-4f6a-9b46-510f175b7bf5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "893435da-4c77-4a36-a9a3-44472c1bfa37",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,499.3333435058594)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "652f1ced-ecac-46a2-8242-84a18754ee5a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1201.3333740234375)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbaadb3d-443f-4085-88ac-e2e02f6e4e8e",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,3682.666748046875)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9dbf4dcd-31ec-4667-86a5-1813528dee37",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Напишете коментар",
+      "targets": [
+        ["linkText=Напишете коментар", "linkText"],
+        ["css=.jdgm-write-rev-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Напишете коментар')]", "xpath:link"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Напишете коментар')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e635e9d3-6a2c-4a12-8499-7f881dcee9c8",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-form",
+      "targets": [
+        ["css=.jdgm-form", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form", "xpath:idRelative"],
+        ["xpath=//div[6]/form", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "db91d465-ee43-4394-8289-20e73dc4a033",
+    "name": "HideForm",
+    "commands": [{
+      "id": "3f7e1f0a-6ae3-49d6-b5ed-c1935fb5a57b",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bea4d1d7-f2e1-4fb3-aa9b-c2f53311f3c6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19880274-50c4-469e-9365-fe7be8ed1e2d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,152)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "360c4764-05fe-4c2f-82c8-2ff072f1bf0c",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,4058)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "725973a3-b4be-40e3-a4a3-9f3636814b7a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Напишете коментар",
+      "targets": [
+        ["linkText=Напишете коментар", "linkText"],
+        ["css=.jdgm-write-rev-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Напишете коментар')]", "xpath:link"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Напишете коментар')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "813bf6d5-0fa0-458c-8721-c3cbf32a9d47",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Анулиране на отзива",
+      "targets": [
+        ["linkText=Анулиране на отзива", "linkText"],
+        ["css=.jdgm-write-rev-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Анулиране на отзива')]", "xpath:link"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Анулиране на отзива')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa164bb5-a485-4b92-a1cb-cf2c773eb38d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.getComputedStyle(document.querySelector('.jdgm-form-wrapper')).display == 'none'",
+      "targets": [],
+      "value": "wrapperIsHidden"
+    }, {
+      "id": "3c19e91b-d646-4907-ae15-af50be74a65f",
+      "comment": "",
+      "command": "assert",
+      "target": "wrapperIsHidden",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "4a8662ee-3e95-4c43-af82-cd5267cb6b1b",
+    "name": "SendFormWithoutData",
+    "commands": [{
+      "id": "1368e9e2-5bd6-42e8-accd-621e6abaf234",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4c8e1c2-a026-4179-bb66-a44ba3a879eb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c44c975-39a6-4099-b554-026951520033",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,4042)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2314861-c0c6-4a4b-885f-0d90c1d76d18",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Напишете коментар",
+      "targets": [
+        ["linkText=Напишете коментар", "linkText"],
+        ["css=.jdgm-write-rev-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Напишете коментар')]", "xpath:link"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Напишете коментар')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63f1def4-89ee-4083-8458-eda3f5bee38f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-submit-rev",
+      "targets": [
+        ["css=.jdgm-submit-rev", "css:finder"],
+        ["xpath=//input[@value='Изпратете ревюто']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/input", "xpath:idRelative"],
+        ["xpath=//div[6]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "953128b3-e792-46d5-8c28-b453f6315a16",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,4346)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4dbba48f-50b9-442b-a90d-2d908660fb75",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-input-error",
+      "targets": [
+        ["id=jdgm_review_reviewer_name_7z5qy87m-error", "id"],
+        ["css=#jdgm_review_reviewer_name_7z5qy87m-error", "css:finder"],
+        ["xpath=//div[@id='jdgm_review_reviewer_name_7z5qy87m-error']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div/div", "xpath:idRelative"],
+        ["xpath=//form/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6fea03cb-1096-4fbe-9468-3ff4c8a548dc",
+    "name": "SendNonYouTubeLink",
+    "commands": [{
+      "id": "83ae312b-18ff-4d48-bff9-b087f75ef7cd",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b6fe772-8998-4f3e-804a-a19bd8bdb954",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b5f685f-bb65-4e24-a67c-c06eb276342a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,620)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf88300d-5c6a-4839-8144-074d6f36d823",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2850)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8acaf9e8-5d2e-4d2e-bb08-699ee2df5d1d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Напишете коментар",
+      "targets": [
+        ["linkText=Напишете коментар", "linkText"],
+        ["css=.jdgm-write-rev-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Напишете коментар')]", "xpath:link"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Напишете коментар')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9603350b-f9b9-42bf-919a-62ca9fc7398e",
+      "comment": "",
+      "command": "click",
+      "target": "name=yt_url",
+      "targets": [
+        ["name=yt_url", "name"],
+        ["css=.jdgm-form__yt-video-fieldset:nth-child(9) > input", "css:finder"],
+        ["xpath=//input[@name='yt_url']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bef76370-6c70-4898-8b8c-6ef59ae87ed0",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,5060)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2cc1dd4a-d25f-4c7f-9103-c6355d6a09ed",
+      "comment": "",
+      "command": "type",
+      "target": "name=yt_url",
+      "targets": [
+        ["name=yt_url", "name"],
+        ["css=.is-filled", "css:finder"],
+        ["xpath=//input[@name='yt_url']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g"
+    }, {
+      "id": "d6b21f74-3df1-4e5c-9b54-24a3411327fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-submit-rev",
+      "targets": [
+        ["css=.jdgm-submit-rev", "css:finder"],
+        ["xpath=//input[@value='Изпратете ревюто']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/input", "xpath:idRelative"],
+        ["xpath=//div[6]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18ae878f-0919-44e4-b484-ec53dea01938",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=yt_url-error",
+      "targets": [],
+      "value": "Не е URL адрес на видеоклип в YouTube"
+    }]
+  }, {
+    "id": "e18837fc-de19-422c-a155-91567e4c7933",
+    "name": "SendCommentForm",
+    "commands": [{
+      "id": "e4644241-8fb9-400a-8e7e-c8c93b753589",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "106249ee-c2e8-49f3-b85f-d574e0ae48d9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9355ca98-7a86-4bd8-b3cf-a8e59e8a9ed3",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,3693)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3073e0d-63ff-49aa-9705-fdf53f2cc387",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Напишете коментар",
+      "targets": [
+        ["linkText=Напишете коментар", "linkText"],
+        ["css=.jdgm-write-rev-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Напишете коментар')]", "xpath:link"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Напишете коментар')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6927022-2505-4424-b1ad-605c3ee8c6fa",
+      "comment": "",
+      "command": "click",
+      "target": "id=jdgm_review_reviewer_name_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_reviewer_name_8kydgb0ig", "id"],
+        ["name=reviewer_name", "name"],
+        ["css=#jdgm_review_reviewer_name_8kydgb0ig", "css:finder"],
+        ["xpath=//input[@id='jdgm_review_reviewer_name_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff7371d2-1ebd-40a1-b5a7-158b0dbe43aa",
+      "comment": "",
+      "command": "type",
+      "target": "id=jdgm_review_reviewer_name_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_reviewer_name_8kydgb0ig", "id"],
+        ["name=reviewer_name", "name"],
+        ["css=#jdgm_review_reviewer_name_8kydgb0ig", "css:finder"],
+        ["xpath=//input[@id='jdgm_review_reviewer_name_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "Ивана Георгиева"
+    }, {
+      "id": "df02b396-d2c8-4c0a-bfec-4df7a7c2ef99",
+      "comment": "",
+      "command": "click",
+      "target": "id=jdgm_review_reviewer_email_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_reviewer_email_8kydgb0ig", "id"],
+        ["name=reviewer_email", "name"],
+        ["css=#jdgm_review_reviewer_email_8kydgb0ig", "css:finder"],
+        ["xpath=//input[@id='jdgm_review_reviewer_email_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3f3edb5-5b87-43eb-8353-3bb7213cb7e6",
+      "comment": "",
+      "command": "type",
+      "target": "id=jdgm_review_reviewer_email_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_reviewer_email_8kydgb0ig", "id"],
+        ["name=reviewer_email", "name"],
+        ["css=#jdgm_review_reviewer_email_8kydgb0ig", "css:finder"],
+        ["xpath=//input[@id='jdgm_review_reviewer_email_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "pavli_manova@abv.bg"
+    }, {
+      "id": "14b88b10-dd42-42cb-b6e3-7d8138599f2c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-form__rating > .jdgm-star:nth-child(5)",
+      "targets": [
+        ["css=.jdgm-form__rating > .jdgm-star:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[3]/span/a[5]", "xpath:idRelative"],
+        ["xpath=//a[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa3b06ba-4c0f-41e1-a756-c3d1866789eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=jdgm_review_title_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_title_8kydgb0ig", "id"],
+        ["name=review_title", "name"],
+        ["css=#jdgm_review_title_8kydgb0ig", "css:finder"],
+        ["xpath=//input[@id='jdgm_review_title_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "906b4a37-fe6e-410f-b429-21157bf41dfe",
+      "comment": "",
+      "command": "type",
+      "target": "id=jdgm_review_title_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_title_8kydgb0ig", "id"],
+        ["name=review_title", "name"],
+        ["css=#jdgm_review_title_8kydgb0ig", "css:finder"],
+        ["xpath=//input[@id='jdgm_review_title_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "Харесват ми"
+    }, {
+      "id": "3e4a9e7d-73fb-46dc-adc1-562e88bf3bbd",
+      "comment": "",
+      "command": "click",
+      "target": "id=jdgm_review_body_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_body_8kydgb0ig", "id"],
+        ["name=review_body", "name"],
+        ["css=#jdgm_review_body_8kydgb0ig", "css:finder"],
+        ["xpath=//textarea[@id='jdgm_review_body_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[5]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84e4595f-47d2-4bd2-9a07-32d27732a6ea",
+      "comment": "",
+      "command": "type",
+      "target": "id=jdgm_review_body_8kydgb0ig",
+      "targets": [
+        ["id=jdgm_review_body_8kydgb0ig", "id"],
+        ["name=review_body", "name"],
+        ["css=#jdgm_review_body_8kydgb0ig", "css:finder"],
+        ["xpath=//textarea[@id='jdgm_review_body_8kydgb0ig']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/div[5]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Идеята, че са от изцяло чисти продукти много ми харесва."
+    }, {
+      "id": "1a03d767-f6ae-4c5f-b97f-9034ea9eaae6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jdgm-submit-rev",
+      "targets": [
+        ["css=.jdgm-submit-rev", "css:finder"],
+        ["xpath=//input[@value='Изпратете ревюто']", "xpath:attributes"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]/form/input", "xpath:idRelative"],
+        ["xpath=//div[6]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bfe0848-e88a-4676-bc8e-dffdc38a02e4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.jdgm-notification",
+      "targets": [
+        ["css=.jdgm-notification", "css:finder"],
+        ["xpath=//div[@id='judgeme_product_reviews']/div/div/div[6]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9f3c18cd-eeb1-4690-a516-1f17c0a1a692",
+    "name": "SortProductsAlphabeticallyAsc",
+    "commands": [{
+      "id": "5a1495d5-c4ad-40a8-89d1-ef2a177aa122",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/collections/frontpage",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b1be1288-ce68-46cb-b902-df7c4d8bc9cc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06b9e0bd-5bea-4ddb-9861-5920847c0a7c",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,320)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0244531-cdfd-41a5-a08e-2689c259e562",
+      "comment": "",
+      "command": "click",
+      "target": "css=.popover-button",
+      "targets": [
+        ["css=.popover-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='facet-main']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//product-facet/div/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Препоръчани')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "402d4652-d8d3-46f1-a4d6-29bd3c772aff",
+      "comment": "choose option Z-A",
+      "command": "click",
+      "target": "css=.popover__choice-item:nth-child(3) > .popover__choice-label",
+      "targets": [
+        ["css=.popover__choice-item:nth-child(3) > .popover__choice-label", "css:finder"],
+        ["xpath=//sort-by-popover[@id='sort-by-popover']/div/div/label[3]/span", "xpath:idRelative"],
+        ["xpath=//label[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'По азбучен ред, A – Z')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f70b5077-c603-4a52-beb5-2578d9b11c78",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return true",
+      "targets": [],
+      "value": "continueWhile"
+    }, {
+      "id": "be931054-ffdb-4c50-8454-d958a84b5ee8",
+      "comment": "",
+      "command": "while",
+      "target": "${continueWhile} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30cffc96-20e9-4a23-8981-efda63df318e",
+      "comment": "Get all products on currnet page count",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner product-item').length;",
+      "targets": [],
+      "value": "elementsCount"
+    }, {
+      "id": "41dbf834-719e-4451-b7dc-ddc006b4c276",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "e96d762c-7bcd-483d-aab2-a3513b41b585",
+      "comment": "",
+      "command": "while",
+      "target": "${i}<parseInt(${elementsCount})",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10ff2b11-ac5b-4f7b-8731-ec18143ebf9c",
+      "comment": "Get previous product name",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner a.product-item-meta__title')[parseInt(${i})-1].textContent.trim()",
+      "targets": [],
+      "value": "prevElementText"
+    }, {
+      "id": "e29b1641-76d0-4307-a7ca-09fc95ec4802",
+      "comment": "Get current product name",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner a.product-item-meta__title')[parseInt(${i})].textContent.trim()",
+      "targets": [],
+      "value": "currElementText"
+    }, {
+      "id": "df6f8791-15e4-447c-972d-3eb2ab37d4c7",
+      "comment": "Check if names are in ascending order",
+      "command": "executeScript",
+      "target": "return ${prevElementText}<${currElementText}",
+      "targets": [],
+      "value": "pairIsSorted"
+    }, {
+      "id": "a078ed61-a339-4e80-88e1-8bf3d7e3e0f5",
+      "comment": "",
+      "command": "assert",
+      "target": "pairIsSorted",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "2dd9de72-f4f7-48ef-b0a9-b0600957a576",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Number(${i})+1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "9ac23f01-7c58-4bab-8955-9627cb4934ec",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36ef88e5-a892-4b38-ba86-a984311cfc0a",
+      "comment": "Check if there is next page",
+      "command": "executeScript",
+      "target": "return Array.from(document.getElementsByClassName(\"pagination__nav-item\")).some(element => element.getAttribute(\"rel\")==\"next\")",
+      "targets": [],
+      "value": "hasNextPage"
+    }, {
+      "id": "ca2d8ed0-b2fc-4de3-ad48-65761ded4c66",
+      "comment": "",
+      "command": "if",
+      "target": "${hasNextPage} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7e56daf-c332-4745-9f9f-c37e55295489",
+      "comment": "go to next page",
+      "command": "click",
+      "target": "css=.pagination__nav-item:nth-child(3)",
+      "targets": [
+        ["css=.pagination__nav-item:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='facet-main']/page-pagination/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/collections/frontpage?page=2')])[2]", "xpath:href"],
+        ["xpath=//nav/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cea247f-dd4a-4d72-84a6-613b1a8ec611",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca051422-fc0d-4dde-a7f5-db06e9c5f85f",
+      "comment": "break while cycle",
+      "command": "executeScript",
+      "target": "return false",
+      "targets": [],
+      "value": "continueWhile"
+    }, {
+      "id": "e892c030-87f3-4712-a939-7031d360f655",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9d5a864-fb58-4e99-ae05-21b42d11592d",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "fb190b28-4963-4ebd-81b7-56d98f9a45af",
+    "name": "SortProductsAlphabeticallyDesc",
+    "commands": [{
+      "id": "b371fa5b-c31f-4362-b5b8-c1f5240a8b51",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/collections/frontpage",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb77affb-2ee5-4958-894e-b9beed0c9856",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ff6ed02f-1067-420e-9235-8203bb02df62",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,320)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4394d6a-4ccd-4366-aa1a-d8739999ae8f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.popover-button",
+      "targets": [
+        ["css=.popover-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='facet-main']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//product-facet/div/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Препоръчани')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed3ac3fa-cfc3-4bc1-a695-857f750700e9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.popover__choice-item:nth-child(4) > .popover__choice-label",
+      "targets": [
+        ["css=.popover__choice-item:nth-child(4) > .popover__choice-label", "css:finder"],
+        ["xpath=//sort-by-popover[@id='sort-by-popover']/div/div/label[4]/span", "xpath:idRelative"],
+        ["xpath=//label[4]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'По азбучен ред, Z – A')]", "xpath:innerText"]
+      ],
+      "value": "choose option Z-A"
+    }, {
+      "id": "cfbd4bfc-682a-4d66-95c4-93dfada23729",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return true",
+      "targets": [],
+      "value": "continueWhile"
+    }, {
+      "id": "0cba48e8-8982-467e-a636-37c013dbc51c",
+      "comment": "",
+      "command": "while",
+      "target": "${continueWhile} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "932c2534-37e4-407a-a9b9-98f8cb307a94",
+      "comment": "Get all products on currnet page count",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner product-item').length;",
+      "targets": [],
+      "value": "elementsCount"
+    }, {
+      "id": "3b8d92e9-130a-4755-9750-ecce6671ea6d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "ee3d9fb0-3285-4753-94f5-7ec89e1d7b16",
+      "comment": "",
+      "command": "while",
+      "target": "${i}<parseInt(${elementsCount})",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "003ade4e-32e7-4811-9ec6-1069fdcd25f6",
+      "comment": "Get previous product name",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner a.product-item-meta__title')[parseInt(${i})-1].textContent.trim()",
+      "targets": [],
+      "value": "prevElementText"
+    }, {
+      "id": "c368e126-6436-4b71-9da5-ad8c2e05f4a0",
+      "comment": "Get current product name",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner a.product-item-meta__title')[parseInt(${i})].textContent.trim()",
+      "targets": [],
+      "value": "currElementText"
+    }, {
+      "id": "3a6aa53f-844a-4de3-af52-2899300283b6",
+      "comment": "Check if names are in ascending order",
+      "command": "executeScript",
+      "target": "return ${prevElementText}>${currElementText}",
+      "targets": [],
+      "value": "pairIsSorted"
+    }, {
+      "id": "f50da988-6cc0-412f-a6bb-10f8423bb0db",
+      "comment": "",
+      "command": "assert",
+      "target": "pairIsSorted",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "f2bb2825-4443-4833-8123-291cc7cc61b6",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Number(${i})+1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "3e527da7-c182-432c-8b10-a6afb4c03be2",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fe1c235-471d-4c4a-aaa4-b5353bc885d4",
+      "comment": "Check if there is next page",
+      "command": "executeScript",
+      "target": "return Array.from(document.getElementsByClassName(\"pagination__nav-item\")).some(element => element.getAttribute(\"rel\")==\"next\")",
+      "targets": [],
+      "value": "hasNextPage"
+    }, {
+      "id": "3e13cc66-2a67-44a0-82a4-5ec1909075b3",
+      "comment": "",
+      "command": "if",
+      "target": "${hasNextPage} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f7b40be1-2515-441e-9a22-6fde3bc45a6e",
+      "comment": "go to next page",
+      "command": "click",
+      "target": "css=.pagination__nav-item:nth-child(3)",
+      "targets": [
+        ["css=.pagination__nav-item:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='facet-main']/page-pagination/nav/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/collections/frontpage?page=2')])[2]", "xpath:href"],
+        ["xpath=//nav/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "896b0237-5913-4dae-9142-ef1ae3284c20",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d735c650-d92b-4b51-bb84-214124e2f378",
+      "comment": "break while cycle",
+      "command": "executeScript",
+      "target": "return false",
+      "targets": [],
+      "value": "continueWhile"
+    }, {
+      "id": "f184f69a-fe2b-4fe9-8dd9-f41363155540",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e347c524-2ab0-49b7-b1e0-4e68b9ef1dcf",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0abd0ff0-0aaf-4c17-9bfc-ead95a872d80",
+    "name": "SortProductsRatingAsc",
+    "commands": [{
+      "id": "e36eb7a2-8e02-4e7c-9017-4dae2b134c3d",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/collections/frontpage",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2359b1c8-aa06-4ade-85d5-ac617e449f30",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e69b6c1-04d4-4d2f-b661-58480bdb043a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,320)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "054981e7-cf28-47d0-9153-81ece015eccd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.popover-button",
+      "targets": [
+        ["css=.popover-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='facet-main']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//product-facet/div/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Препоръчани')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "80d8c9ac-97c8-44f4-8de3-95b770cf2230",
+      "comment": "",
+      "command": "click",
+      "target": "css=.popover__choice-item:nth-child(1) > .popover__choice-label",
+      "targets": [
+        ["css=.popover__choice-item:nth-child(3) > .popover__choice-label", "css:finder"],
+        ["xpath=//sort-by-popover[@id='sort-by-popover']/div/div/label[3]/span", "xpath:idRelative"],
+        ["xpath=//label[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'По азбучен ред, A – Z')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bd65c9e-c7cc-4e4e-8f1d-0e2ed449c347",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return true",
+      "targets": [],
+      "value": "continueWhile"
+    }, {
+      "id": "89a5c2d1-15cc-4b73-9bc5-950122d6acfe",
+      "comment": "",
+      "command": "while",
+      "target": "${continueWhile} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c046eb39-3ca6-4627-b5a2-323e402a0617",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner .jdgm-prev-badge').length;",
+      "targets": [],
+      "value": "elementsCount"
+    }, {
+      "id": "99bfa16e-6297-4f07-be1a-43081b72bdbf",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "e2ebbac7-4cde-4ddd-bf99-b9eaccd45433",
+      "comment": "",
+      "command": "while",
+      "target": "${i}<parseInt(${elementsCount})",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "819eabd0-5d0f-4264-a508-aa1439b0c4dd",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner .jdgm-prev-badge')[parseInt(${i})-1].getAttribute('data-average-rating')",
+      "targets": [],
+      "value": "prevElementRating"
+    }, {
+      "id": "04e45cb7-17f3-49e7-995c-366f5f4664fd",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.querySelectorAll('.product-list__inner .jdgm-prev-badge')[parseInt(${i})].getAttribute('data-average-rating')",
+      "targets": [],
+      "value": "currElementRating"
+    }, {
+      "id": "330e1eb2-b3ab-4388-9da7-757c2f424327",
+      "comment": "",
+      "command": "echo",
+      "target": "${currElementRating}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec6fc50c-6f4a-4465-89ef-8afb360a89c1",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseInt(${prevElementRating})>=parseInt(${currElementRating})",
+      "targets": [],
+      "value": "pairIsSorted"
+    }, {
+      "id": "4f0ce637-bc09-4445-9f51-d4e38ccde326",
+      "comment": "",
+      "command": "assert",
+      "target": "pairIsSorted",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "b8c0f84c-1947-4b01-965b-107285b39de4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Number(${i})+1",
+      "targets": [],
+      "value": "i"
+    }, {
+      "id": "1d18ffdc-926e-450c-94c6-a22a5e2a78e0",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70e867a2-7873-4a27-a40b-0c7715d5ba84",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Array.from(document.getElementsByClassName(\"pagination__nav-item\")).some(element => element.getAttribute(\"rel\")==\"next\")",
+      "targets": [],
+      "value": "hasNextPage"
+    }, {
+      "id": "9dba0b55-3bf0-4fbb-8eff-c18fd3f5ff8f",
+      "comment": "",
+      "command": "if",
+      "target": "${hasNextPage} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8524631f-5193-4075-ae78-bc06975664cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination__nav-item:nth-child(3)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f94e21c-220a-4cc4-b208-1216ffa883b9",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aaa781a6-6a56-40d1-ab81-c8196da5c51a",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return false",
+      "targets": [],
+      "value": "continueWhile"
+    }, {
+      "id": "eecc8bc7-9f4d-4374-b1d3-cbbd4caa8c59",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de9ca778-55f6-4714-90ce-f21a92274f52",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f28f3d07-af42-475a-8b0f-7ba62f82b7ee",
+    "name": "TestLoadTime",
+    "commands": [{
+      "id": "127ff9cf-80bd-4a25-8984-b4f270269e0c",
+      "comment": "",
+      "command": "open",
+      "target": "https://inaessentials.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a5593f7-f5c5-4568-9dab-73d9524bf739",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return new Date().getTime()",
+      "targets": [],
+      "value": "startTime"
+    }, {
+      "id": "316e074e-3730-4d80-aba6-697bfbc585a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.section__footer > .button",
+      "targets": [
+        ["css=.section__footer > .button", "css:finder"],
+        ["xpath=//a[contains(text(),'Виж всички продукти')]", "xpath:link"],
+        ["xpath=//product-list[@id='block-template--15885738311915__featured-collections-collection-1']/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/collections/frontpage')])[3]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13cf3f74-98df-4fee-ae1d-7759ce8541ef",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return new Date().getTime()",
+      "targets": [],
+      "value": "endTime"
+    }, {
+      "id": "551d12b5-c982-4f84-911c-610fd9ac74de",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return parseInt(${endTime})-parseInt(${startTime})<=3000;",
+      "targets": [],
+      "value": "fastResponse"
+    }, {
+      "id": "f88bde72-ab94-47c5-acb3-b7230c95d347",
+      "comment": "",
+      "command": "assert",
+      "target": "fastResponse",
+      "targets": [],
+      "value": "true"
+    }]
+  }],
+  "suites": [{
+    "id": "46ec1ed9-1d7d-4355-9e6c-357626f816d5",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }, {
+    "id": "6f23ee6f-11ae-40f6-b5de-c3627c8dd0c5",
+    "name": "SingleProductFeedbackSection",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c955f72a-812f-479f-b2d3-c82f7a8b3d38", "db91d465-ee43-4394-8289-20e73dc4a033", "43efcb36-9670-4a4d-8aa6-7c33251a58ac", "bac19105-b7d4-403a-abe0-154c90fd2c00", "e18837fc-de19-422c-a155-91567e4c7933", "4a8662ee-3e95-4c43-af82-cd5267cb6b1b", "6fea03cb-1096-4fbe-9468-3ff4c8a548dc", "9dd4f2bb-0e2b-4c83-a904-41036afa54ed", "1f08cdff-3f76-420c-ad88-02599f64959b", "d22f646d-3bb7-4d01-9b2a-0559a72ecf15", "eaf9c434-17b9-4fc9-849d-c67a26e867c6", "6a677d66-6c94-46fa-99d8-1e3ed6f3ac8a", "3b3c5cb6-7486-4f34-a1d6-0e1a1eb184fa"]
+  }, {
+    "id": "f6df76ea-3f16-49e9-b792-2fc282a8e421",
+    "name": "SortProducts",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9f3c18cd-eeb1-4690-a516-1f17c0a1a692", "fb190b28-4963-4ebd-81b7-56d98f9a45af", "0abd0ff0-0aaf-4c17-9bfc-ead95a872d80"]
+  }],
+  "urls": ["https://inaessentials.com/", "https://inaessentials.com/products/lavandulova-maskina-60g-lavandulova-voda-hidrolina-diy-combinaciq-za-akne-i-mazna-koja", "https://inaessentials.com/products/maskina-ot-matochina-60g-voda-ot-matochina-hidrolina-diy-kombinaciq-za-suha-i-iztoshtena-koja", "https://inaessentials.com/products/cherna-maskina-i-hidrobiotic-diy-kombinaciq-za-problemna-koja", "https://inaessentials.com/products/voda-ot-diva-smradlika", "https://inaessentials.com/products/semeen-paket-za-ustna-higiena", "https://inaessentials.com/products/rozova-maskina-za-normalna-do-zrqla-koja-60g", "https://inaessentials.com/collections/frontpage"],
+  "plugins": []
+}
